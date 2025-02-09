@@ -1,12 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link
       href="https://fonts.googleapis.com/css2?family=Noto+Serif+Display:wght@100&display=swap" rel="stylesheet"/>
     <link rel="stylesheet" href="style.css" />
     <title>Website</title>
+    <script>
+
+      function handleSubmit() {
+        window.location.href = "Feedback.html";
+      }
+
+    </script>
   </head>
   <body>
     <div class="TopHeader">
@@ -16,7 +24,7 @@
     <div class="Header">
       <div class="row">
         <div class="hp2" style="padding-left: 20px">Naveen Podilikuri</div>
-        <div class="hp3"><a class="p" href="#">Linkedin</a></div>
+        <div class="hp3"><a class="p" href="https://www.linkedin.com/in/naveen-podilikuri/">Linkedin</a></div>
       </div>
     </div>
     <div class="Menu">
@@ -39,7 +47,7 @@
       <br />
       <div class="about">
         <div class="content">
-          <img src="C:\Users\Lenovo\Desktop\res pic.jpg" />
+          <img src="Images/res pic.jpg"/>
           <br />
           <br /> 
           <p class="para">
@@ -202,7 +210,7 @@
     <br/>
     <div class="project">
       <a href="https://github.com/NaveenPodilikuri">
-    <img src="C:\Users\Lenovo\Pictures\Screenshots\Screenshot 2024-10-23 212241.png"></a>
+    <img src="Images/Redux.png"></a>
     <h5>Redux Cart</h5>
     
     <p>The Redux Cart project is an e-commerce application that demonstrates the power of Redux in managing global state. It showcases the implementation of a shopping cart where users can add or remove items and see real-time updates to their cart total. The project emphasizes best practices in state management, combining React and Redux for efficient, scalable, and maintainable application architecture. It's perfect for learning about complex state handling and building responsive user interfaces.</p>
@@ -211,7 +219,7 @@
     <br/>
     <div class="project">
       <a href="https://github.com/NaveenPodilikuri/FullstackLab">
-    <img src="C:\Users\Lenovo\Pictures\Screenshots\Screenshot 2024-10-23 212323.png"></a>
+    <img src="Images/Personal Portfolio.png"></a>
     <h6>Portfolio</h6>
     
     <p>This Portfolio project is a personal website designed to showcase professional achievements, projects, and skills. It highlights a clean, minimalistic design and is fully responsive, ensuring a seamless experience across all devices. Built using modern web development technologies, it provides a space where users can display their work, resume, and contact information, offering a sleek and professional way to present themselves to potential employers or collaborators.</p>
@@ -228,16 +236,16 @@
         <br /><br />
         <marquee>
          <a href="https://www.coursera.org/account/accomplishments/certificate/SLO7MEBX7ZKC">
-         <img src="C:\Users\Lenovo\Pictures\Screenshots\Screenshot 2024-10-26 210544.png" alt="Clickable Image"/></a>
+         <img src="Images/Google Cloud.png" alt="Clickable Image"/></a>
          <a href="https://moonshot.scaler.com/s/sl/hUo4wUWSoL?_gl=1*1vzt9e8*_gcl_aw*R0NMLjE3MjI4NjkxNzcuRUFJYUlRb2JDaE1JOGJYWXM0dmVod01WRTZkbUFoM3ZMd2tKRUFBWUFTQUFFZ0kyal9EX0J3RQ..*_gcl_au*MTA0NzA1NTYuMTcyMjg2OTA2MQ..*FPAU*MTA0NzA1NTYuMTcyMjg2OTA2MQ..*_ga*NTA2MDk2MzkuMTcxMTI5NjI2OA..*_ga_53S71ZZG1X*MTczMDEzODkzMy4xMC4xLjE3MzAxMzg5NzcuNTkuMC4zMDc2NTExOTY">
-         <img src="C:\Users\Lenovo\Desktop\scalar.png" alt="Clickable Image"/></a>
+         <img src="Images/scalar.png" alt="Clickable Image"/></a>
          <a href="https://alison.com/shop?courseId=3757">
-         <img src="C:\Users\Lenovo\Desktop\web.jpg" alt="Clickable Image"/></a>
+         <img src="Images/Allison.jpg" alt="Clickable Image"/></a>
          <a href="https://www.hackerrank.com/certificates/81ce2b427ed3">
-         <img src="C:\Users\Lenovo\Pictures\Screenshots\Screenshot 2024-11-10 083139.png" alt="Clickable Image"/></a>
+         <img src="Images/Hackerank.png" alt="Clickable Image"/></a>
          <a href="https://courses.cognitiveclass.ai/certificates/43b5f009af674efb863d632739458c59">
-         <img src="C:\Users\Lenovo\Pictures\Screenshots\Screenshot 2024-10-26 210716.png" alt="Clickable Image"/></a>
-         <img src="C:\Users\Lenovo\Pictures\Screenshots\Screenshot 2024-10-26 205648.png"/>
+         <img src="Images/Sql.png" alt="Clickable Image"/></a>
+         <img src="Images/Smart Interviews.png"/>
         </marquee>
       </div>
       <br/>
@@ -269,7 +277,8 @@
         <textarea rows="3" cols="300" name="abt" id="about"></textarea>
     </div>
     <div class="form-group">
-        <input type="button" value="Submit" id="btn" />
+
+        <input type="button" value="Submit" id="btn" onclick="handleSubmit()" />
     </div> 
       </div>
     </div>

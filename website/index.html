@@ -18,8 +18,16 @@
   </head>
   <body>
     <div class="TopHeader">
-      <div style="float: left">Email:naveenpodilikuri@gmai.com</div>
-      <div style="float: right">Instagram Id:just._naveen</div>
+      <div style="float: left">
+        Email: <a href="https://mail.google.com/mail/?view=cm&fs=1&to=naveenpodilikuri@gmail.com" target="_blank">
+          naveenpodilikuri@gmail.com
+        </a>
+        
+      </div>
+      
+    </div>
+      
+     
     </div>
     <div class="Header">
       <div class="row">
@@ -257,33 +265,102 @@
       <hr/>
       <br/>
       <br/>
-      <div class="form-group">
-        <label for="name">Name: </label>
-        <input type="text" id="name" />
-      </div>
-    <div class="form-group">
-        <label for="contact">Contact number: </label>
-        <input type="text" id="contact" />
+      <form id="feedbackForm" action="https://formspree.io/f/xanqzooq" method="POST">
+        <!-- Ensure emails are sent to your inbox -->
+        <input type="hidden" name="_replyto" value="naveenpodilikuri@gmail.com">
+    
+        <div class="form-group">
+          <label for="name">Name: </label>
+          <input type="text" id="name" name="name" required />
+        </div>
+        <div class="form-group">
+          <label for="contact">Contact number: </label>
+          <input type="text" id="contact" name="contact" required />
+        </div>
+        <div class="form-group">
+          <label>Gender</label>
+          <div class="gender-group">
+            <input type="radio" name="gender" value="male" required /> Male
+            <input type="radio" name="gender" value="female" required /> Female
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="feedback">Feedback: </label>
+          <textarea rows="3" cols="300" name="feedback" id="feedback" required></textarea>
+        </div>
+        <div class="form-group">
+          <input type="submit" value="Submit" id="btn" />
+        </div> 
+      </form>
+    
+      <!-- Popup Notification -->
+      <div id="popupMessage" class="popup"></div>
     </div>
-    <div class="form-group">
-        <label>Gender</label>
-        <div class="gender-group">
-            <input type="radio" name="gender" value="male" /> Male
-            <input type="radio" name="gender" value="female" /> Female
-    </div>
-    </div>
-    <div class="form-group">
-        <label for="about">Feedback </label>
-        <textarea rows="3" cols="300" name="abt" id="about"></textarea>
-    </div>
-    <div class="form-group">
-
-        <input type="button" value="Submit" id="btn" onclick="handleSubmit()" />
-    </div> 
-      </div>
-    </div>
-    <br />
-    <br />
-    <hr />
+    
+    <style>
+      /* Popup Styles */
+      .popup {
+        display: none;
+        position: fixed;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #28a745; /* Green for success */
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        z-index: 1000;
+        text-align: center;
+        transition: opacity 0.5s ease-in-out;
+      }
+      .popup.error {
+        background-color: #dc3545; /* Red for error */
+      }
+    </style>
+    
+    <script>
+      document.getElementById("feedbackForm").addEventListener("submit", async function(event) {
+          event.preventDefault();
+    
+          let form = this;
+          let formData = new FormData(form);
+          let popup = document.getElementById("popupMessage");
+    
+          try {
+              let response = await fetch(form.action, {
+                  method: "POST",
+                  body: formData,
+                  headers: { "Accept": "application/json" }
+              });
+    
+              if (response.ok) {
+                  showPopup("Feedback submitted successfully!", "success");
+                  form.reset();
+              } else {
+                  showPopup("Something went wrong. Please try again.", "error");
+              }
+          } catch (error) {
+              showPopup("Something went wrong. Please try again.", "error");
+              console.error("Network error:", error);
+          }
+      });
+    
+      function showPopup(message, type) {
+          let popup = document.getElementById("popupMessage");
+          popup.innerText = message;
+          popup.className = type === "success" ? "popup" : "popup error";
+          popup.style.display = "block";
+    
+          setTimeout(() => {
+              popup.style.opacity = "0";
+              setTimeout(() => {
+                  popup.style.display = "none";
+                  popup.style.opacity = "1";
+              }, 500);
+          }, 3000);
+      }
+    </script>
+    
   </body>
 </html>

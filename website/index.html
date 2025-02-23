@@ -266,7 +266,6 @@
       <br/>
       <br/>
       <form id="feedbackForm" action="https://formspree.io/f/xanqzooq" method="POST">
-        <!-- Ensure emails are sent to your inbox -->
         <input type="hidden" name="_replyto" value="naveenpodilikuri@gmail.com">
     
         <div class="form-group">
@@ -293,19 +292,17 @@
         </div> 
       </form>
     
-      <!-- Popup Notification -->
       <div id="popupMessage" class="popup"></div>
     </div>
     
     <style>
-      /* Popup Styles */
       .popup {
         display: none;
         position: fixed;
         top: 10px;
         left: 50%;
         transform: translateX(-50%);
-        background-color: #28a745; /* Green for success */
+        background-color: #28a745; 
         color: white;
         padding: 10px 20px;
         border-radius: 5px;
@@ -315,7 +312,7 @@
         transition: opacity 0.5s ease-in-out;
       }
       .popup.error {
-        background-color: #dc3545; /* Red for error */
+        background-color: #dc3545; 
       }
     </style>
     
@@ -335,8 +332,12 @@
               });
     
               if (response.ok) {
-                  showPopup("Feedback submitted successfully!", "success");
+                  ;
                   form.reset();
+                  
+                  setTimeout(() => {
+                      window.location.href = "Feedback.html";
+                  }, 2000); 
               } else {
                   showPopup("Something went wrong. Please try again.", "error");
               }
@@ -361,6 +362,7 @@
           }, 3000);
       }
     </script>
+    
     
   </body>
 </html>

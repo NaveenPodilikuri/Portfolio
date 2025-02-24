@@ -156,7 +156,8 @@ body {
   color: white;
   text-align: center;
   margin-top: 20px;
-  font-weight: normal;
+  font-family: "Noto Serif Display", serif;
+  font-weight: bold;
   padding-bottom: 10px;
 }
 .form-group {

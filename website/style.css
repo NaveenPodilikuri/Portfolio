@@ -347,3 +347,78 @@ padding-left: 40px;
   border-radius: 5px;
   font-size: 18px;
 }
+  .scroll-container {
+    overflow-x: auto;
+    white-space: nowrap;
+    padding: 20px 0; /* space above and below */
+    scroll-behavior: smooth;
+  }
+
+  .certificate-img {
+    height: 350px; /* 🎯 same height as original marquee-style */
+    display: inline-block;
+    margin-right: 20px;
+    vertical-align: middle;
+  }
+  #scrollCertificates::-webkit-scrollbar-thumb {
+  background: transparent;
+  border: none;
+}
+
+#scrollCertificates::-webkit-scrollbar {
+  height: 0px;
+}
+.popup {
+        display: none;
+        position: fixed;
+        top: 10px;
+        left: 50%;
+        transform: translateX(-50%);
+        background-color: #28a745; 
+        color: white;
+        padding: 10px 20px;
+        border-radius: 5px;
+        font-size: 16px;
+        z-index: 1000;
+        text-align: center;
+        transition: opacity 0.5s ease-in-out;
+      }
+      .popup.error {
+        background-color: #dc3545; 
+      }
+.Footer hr {
+  width: 100vw;       /* full width of the viewport */
+  margin: 0;          /* remove any automatic centering */
+  border: 1px solid white;  /* keep or style as needed */
+}
+.TopHeader {
+  background-color:gray;
+  padding:10px 20px;
+  display:flex;
+  justify-content:space-between;
+  align-items: center;
+  font-family: 'Noto Serif Display', serif;
+}
+
+.top-links {
+  display: flex;
+  gap: 60px;
+  font-size: 20px;
+}
+
+.top-btn {
+  border: 2px solid #b88989;
+  padding: 5px 12px;
+  border-radius: 10px;
+  background-color: white;
+  color: blue;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.top-btn:hover {
+  background-color:white
+}
+
+
+
